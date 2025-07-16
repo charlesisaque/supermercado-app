@@ -13,22 +13,100 @@ main {
   box-shadow: 0 0 10px #ddd;
 }
 
+h2 {
+  width: 85%;
+  margin: 20px auto;
+  font-family: monospace;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 24px;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 1rem;
+}
+
+form > div {
+  margin-bottom: 25px;
+}
+
+label {
+  font-family: monospace;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 15px;
+  margin-left: 10px;
+  /* text-align: center;
+  max-width: 15%; */
+}
+
 input {
   display: block;
-  width: 100%;
+  width: 95%;
+  /* max-width: 100%; */
+  align-self: center;
   margin-bottom: 1rem;
   padding: 0.5rem;
+  border: #8b0002, 2px, solid;
+  border-radius: 10px;
+  height: 25px;
+  font-size: larger;
 }
 
 button {
+  font-family: monospace;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 32px;
   padding: 0.6rem 1rem;
   cursor: pointer;
-  background: #007bff;
-  border: none;
+  background: #a10000;
+  border: #8b0002 2px solid;
   color: #fff;
-  border-radius: 4px;
+  border-radius: 10px;
+}
+
+.pLogin {
+  font-weight: 700;
+  margin: 0px;
+}
+
+.pLogin > a {
+  color: #00aeff;
+  font-style: italic;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.ouLogin {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+}
+
+.ouLogin > p {
+  margin: 0px 25px;
+  color: #747775;
+  font-family: monospace;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.ouLogin > hr {
+  width: 100%;
 }
 
 hr {
   margin: 1.5rem 0;
+  border: none 1px #747775;
+  border-top-style: solid;
+}
+
+.g_id_signin {
+  width: 75%;
+  margin: auto;
 }

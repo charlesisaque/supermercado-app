@@ -1,33 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login - Supermercado Bahia Norte</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Supermercado Bahia Norte</title>
 
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main>
-    <h1>Login</h1>
-    <form id="formLogin">
-      <input id="emailLogin" type="email" placeholder="Seu e-mail" required />
-      <input id="senhaLogin" type="password" placeholder="Senha" required />
-      <button type="submit">Entrar</button>
-    </form>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h2>Digite seu E-mail e Senha para iniciar sessão</h2>
+      <form id="formLogin">
+        <div>
+          <label for="email">E-mail</label>
+          <input
+            id="emailLogin"
+            type="email"
+            placeholder="Seu e-mail"
+            required
+          />
+          <label for="senha">Senha</label>
+          <input id="senhaLogin" type="password" placeholder="Senha" required />
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+      <p class="pLogin">
+        Não tem conta? <a href="cadastro.html">Cadastre-se</a>
+      </p>
+      <div class="ouLogin">
+        <hr />
+        <p>ou</p>
+        <hr />
+      </div>
+      <script src="https://accounts.google.com/gsi/client" async></script>
+      <div
+        id="g_id_onload"
+        data-client_id="YOUR_GOOGLE_CLIENT_ID"
+        data-login_uri="https://your.domain/your_login_endpoint"
+        data-auto_prompt="false"
+      ></div>
+      <div
+        class="g_id_signin"
+        data-type="standard"
+        data-size="large"
+        data-theme="outline"
+        data-text="sign_in_with"
+        data-shape="rectangular"
+        data-logo_alignment="left"
+      ></div>
+    </main>
 
-    <button id="btnGoogle">Entrar com Google</button>
-    <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
-  </main>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
 
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <!-- Configuração Firebase -->
+    <script src="src/firebase-config.js"></script>
 
-  <!-- Configuração Firebase -->
-  <script src="src/firebase-config.js"></script>
-
-  <!-- Seu JS -->
-  <script src="src/login.js"></script>
-</body>
+    <!-- Seu JS -->
+    <script src="src/login.js"></script>
+  </body>
 </html>
