@@ -32,8 +32,8 @@ Este é o repositório do aplicativo de delivery e gerenciamento do Supermercado
 - .gitignore - Arquivos e pastas ignoradas pelo Git
   
 ## Próximos passos
--Criar página de perfil para edição dos dados do usuário
--Implementar integração real com sistema Arius (API)
--Desenvolver página administrativa para inserção/edição de imagens e produtos
--Sistema de carrinho, pedido e pagamento
+- Criar página de perfil para edição dos dados do usuário
+- Implementar integração real com sistema Arius (API)
+- Desenvolver página administrativa para inserção/edição de imagens e produtos
+- Sistema de carrinho, pedido e pagamento
   
