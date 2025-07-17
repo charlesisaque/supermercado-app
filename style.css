@@ -1,6 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
-  padding: 2rem;
+  /* padding: 2rem; */
   background: #f9f9f9;
 }
 
@@ -9,17 +17,85 @@ main {
   padding: 2rem;
   max-width: 400px;
   margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
   border-radius: 8px;
   box-shadow: 0 0 10px #ddd;
 }
 
-h2 {
-  width: 85%;
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  background-color: #de1923;
+  padding: 15px;
+}
+
+header > a,
+footer > a {
+  display: flex;
+}
+
+.img-logo {
+  width: 250px;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #de1923;
+  color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+footer > a > img {
+  padding: 5px;
+  width: 65px;
+  background-color: #3752b5;
+}
+
+.vazio {
+  width: 65px;
+  background-color: #ad1f26;
+  height: 34px;
+  align-self: center;
+}
+
+h1 {
+  width: 60%;
   margin: 20px auto;
-  font-family: monospace;
+  margin-top: 0px;
+  padding: 2px 0px;
+  font-family: "Inter", sans-serif;
   font-weight: 900;
   font-style: italic;
   font-size: 24px;
+  text-align: center;
+  color: #de1923;
+  background-color: #fff100;
+}
+
+h2 {
+  width: 90%;
+  margin: 20px auto;
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 24px;
+  text-align: center;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 20px;
+  margin: auto;
+  background-color: #ad1f26;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
 }
 
 form {
@@ -33,7 +109,7 @@ form > div {
 }
 
 label {
-  font-family: monospace;
+  font-family: "Inter", sans-serif;
   font-weight: 900;
   font-style: italic;
   font-size: 15px;
@@ -42,21 +118,27 @@ label {
   max-width: 15%; */
 }
 
-input {
+input,
+select {
   display: block;
-  width: 95%;
+  width: 100%;
   /* max-width: 100%; */
-  align-self: center;
+  /* align-self: center; */
   margin-bottom: 1rem;
-  padding: 0.5rem;
+  padding: 20px 10px;
   border: #8b0002, 2px, solid;
   border-radius: 10px;
   height: 25px;
   font-size: larger;
 }
 
+select {
+  padding: 10px;
+  height: auto;
+}
+
 button {
-  font-family: monospace;
+  font-family: "Inter", sans-serif;
   font-weight: 900;
   font-style: italic;
   font-size: 32px;
@@ -90,7 +172,7 @@ button {
 .ouLogin > p {
   margin: 0px 25px;
   color: #747775;
-  font-family: monospace;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   font-style: italic;
   font-size: 16px;

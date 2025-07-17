@@ -1,41 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cadastro - Supermercado Bahia Norte</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main>
-    <h1>Cadastro</h1>
-    <form id="formCadastro">
-      <input type="email" id="emailCadastro" placeholder="Seu e-mail" required />
-      <input type="password" id="senhaCadastro" placeholder="Sua senha" required minlength="6" />
-      <input type="text" id="nomeCompleto" placeholder="Seu nome completo" required />
-      <input type="tel" id="telefone" placeholder="Seu telefone" required />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro - Supermercado Bahia Norte</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="home.html"
+        ><img
+          src="img/logo.jpg"
+          alt="Supermercado Bahia Norte, preço baixo todo dia!"
+          class="img-logo"
+      /></a>
+    </header>
+    <main>
+      <h1>CADASTRO</h1>
+      <h2>Insira as devidas informações</h2>
+      <form id="formCadastro">
+        <div>
+          <label for="emailCadastro">E-mail</label>
+          <input
+            type="email"
+            id="emailCadastro"
+            placeholder="Seu e-mail"
+            required
+          />
+          <label for="nomeCompleto">Nome Completo</label>
+          <input
+            type="text"
+            id="nomeCompleto"
+            placeholder="Seu nome completo"
+            required
+          />
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" placeholder="Seu telefone" required />
+          <label for="senhaCastro">Senha</label>
+          <input
+            type="password"
+            id="senhaCadastro"
+            placeholder="Sua senha"
+            required
+            minlength="6"
+          />
+          <label for="confirmarSenhaCadastro">Confirmar Senha</label>
+          <input
+            type="password"
+            id="confirmarSenhaCadastro"
+            placeholder="Confirmar Senha"
+            required
+            minlength="6"
+          />
+          <label for="bairro">Bairro</label>
+          <select id="bairro" required>
+            <option value="" disabled selected>Selecione seu bairro</option>
+            <option value="São Cristóvão">São Cristóvão</option>
+            <option value="Mussurunga">Mussurunga</option>
+            <option value="Parque São Cristóvão">Parque São Cristóvão</option>
+            <!-- Adicione mais bairros conforme a lista do mercado -->
+          </select>
+        </div>
 
-      <label for="bairro">Selecione seu bairro:</label>
-      <select id="bairro" required>
-        <option value="" disabled selected>Selecione seu bairro</option>
-        <option value="São Cristóvão">São Cristóvão</option>
-        <option value="Mussurunga">Mussurunga</option>
-        <option value="Parque São Cristóvão">Parque São Cristóvão</option>
-        <!-- Adicione mais bairros conforme a lista do mercado -->
-      </select>
+        <button type="submit">Cadastrar</button>
+      </form>
 
-      <button type="submit">Cadastrar</button>
-    </form>
+      <p class="pLogin">
+        Já tem uma conta? <a href="login.html">Faça login aqui</a>
+      </p>
+      <div class="ouLogin">
+        <hr />
+        <p>ou</p>
+        <hr />
+      </div>
+      <script src="https://accounts.google.com/gsi/client" async></script>
+      <div
+        id="g_id_onload"
+        data-client_id="YOUR_GOOGLE_CLIENT_ID"
+        data-login_uri="https://your.domain/your_login_endpoint"
+        data-auto_prompt="false"
+      ></div>
+      <div
+        class="g_id_signin"
+        data-type="standard"
+        data-size="large"
+        data-theme="outline"
+        data-text="sign_in_with"
+        data-shape="rectangular"
+        data-logo_alignment="left"
+      ></div>
+    </main>
+    <footer>
+      <a href="login.html"
+        ><img src="svg/arrow-left-square.svg" alt="Retornar"
+      /></a>
+      <h3>Cadastro</h3>
+      <div class="vazio"></div>
+    </footer>
 
-    <p>Já tem uma conta? <a href="login.html">Faça login aqui</a></p>
-  </main>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
-
-<script src="src/firebase-config.js"></script>
-<script src="src/cadastro.js"></script>
-
-</body>
+    <script src="src/firebase-config.js"></script>
+    <script src="src/cadastro.js"></script>
+  </body>
 </html>
