@@ -1,24 +1,147 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Área do Cliente - Supermercado Bahia Norte</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main>
-    <h1>Bem-vindo(a) à área do cliente!</h1>
-    <p id="userInfo"></p>
-    <button id="btnLogout">Sair</button>
-  </main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Área do Cliente - Supermercado Bahia Norte</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href=""><img src="svg/instagram.svg" alt="Nosso Instagram" /></a>
+        <a href=""><img src="svg/whatsapp.svg" alt="Nosso Whatsapp" /></a>
+      </div>
+      <a href="home.html"
+        ><img
+          src="img/logo.jpg"
+          alt="Supermercado Bahia Norte, preço baixo todo dia!"
+          class="img-logo"
+      /></a>
+      <div>
+        <a href=""><img src="svg/person-circle.svg" alt="Seu Perfil" /></a>
+        <a href=""><img src="svg/question-circle.svg" alt="Sobre Nós" /></a>
+      </div>
+    </header>
+    <nav>
+      <a href=""><img src="svg/exclamation-circle-fill.svg" alt="Avisos" /></a>
+      <div>
+        <input type="search" placeholder="Pesquisar um Produto" />
+        <button id="search-btn">
+          <img src="svg/search.svg" alt="Pesquisar..." />
+        </button>
+      </div>
+      <a href=""><img src="svg/subtract.svg" alt="Menu" /></a>
+    </nav>
+    <main>
+      <h1>PAGINA PRINCIPAL</h1>
+      <h2>Promoções</h2>
+      <section class="produtos" id="promocoes">
+        <div>
+          <h4>R$10,00 UN</h4>
+          <div class="div1">
+            <img src="img/laranja.jpg" alt="" />
+            <p>PRODUTO</p>
+          </div>
+          <div class="div2">
+            <input
+              type="number"
+              name="unidade"
+              id="UN1"
+              value="0"
+              inputmode="numeric"
+              min="0"
+              max="99"
+            /><span>UN</span>
+            <button id="diminuir">
+              <img src="svg/dash-circle-fill.svg" alt="Menos" />
+            </button>
+            <button id="aumentar">
+              <img src="svg/plus-circle-fill.svg" alt="Mais" />
+            </button>
+          </div>
+        </div>
+        <div>
+          <h4>R$10,00 UN</h4>
+          <div class="div1">
+            <img src="img/laranja.jpg" alt="" />
+            <p>PRODUTO</p>
+          </div>
+          <div class="div2">
+            <input
+              type="number"
+              name="unidade"
+              id="UN2"
+              value="0"
+              inputmode="numeric"
+            /><span>UN</span>
+            <button id="diminuir">
+              <img src="svg/dash-circle-fill.svg" alt="Menos" />
+            </button>
+            <button id="aumentar">
+              <img src="svg/plus-circle-fill.svg" alt="Mais" />
+            </button>
+          </div>
+        </div>
+        <div>
+          <h4>R$10,00 UN</h4>
+          <div class="div1">
+            <img src="img/laranja.jpg" alt="" />
+            <p>PRODUTO</p>
+          </div>
+          <div class="div2">
+            <input
+              type="number"
+              name="unidade"
+              id="UN3"
+              value="0"
+              inputmode="numeric"
+            /><span>UN</span>
+            <button id="diminuir">
+              <img src="svg/dash-circle-fill.svg" alt="Menos" />
+            </button>
+            <button id="aumentar">
+              <img src="svg/plus-circle-fill.svg" alt="Mais" />
+            </button>
+          </div>
+        </div>
+        <div>
+          <h4>R$10,00 UN</h4>
+          <div class="div1">
+            <img src="img/laranja.jpg" alt="" />
+            <p>PRODUTO</p>
+          </div>
+          <div class="div2">
+            <input
+              type="number"
+              name="unidade"
+              id="UN4"
+              value="0"
+              inputmode="numeric"
+            /><span>UN</span>
+            <button id="diminuir">
+              <img src="svg/dash-circle-fill.svg" alt="Menos" />
+            </button>
+            <button id="aumentar">
+              <img src="svg/plus-circle-fill.svg" alt="Mais" />
+            </button>
+          </div>
+        </div>
+      </section>
+      <p id="userInfo"></p>
+      <button id="btnLogout">Sair</button>
+    </main>
+    <footer>
+      <a href=""><img src="svg/bag-fill.svg" alt="Catálogo" /></a>
+      <h3>Pagina Principal</h3>
+      <a href=""><img src="svg/cart-fill-frame.svg" alt="Carrinho" /></a>
+    </footer>
 
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script> 
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 
-<script src="src/firebase-config.js"></script>
-<script src="src/home.js"></script>
-
-</body>
+    <script src="src/firebase-config.js"></script>
+    <script src="src/home.js"></script>
+  </body>
 </html>

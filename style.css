@@ -27,11 +27,22 @@ header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+  gap: 25px;
   background-color: #de1923;
   padding: 15px;
 }
 
-header > a,
+header > div {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+header > div > a > img {
+  width: 40px;
+}
+
+header a,
 footer > a {
   display: flex;
 }
@@ -39,6 +50,40 @@ footer > a {
 .img-logo {
   width: 250px;
   border-radius: 10px;
+}
+
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #162e86;
+  gap: 10px;
+}
+
+nav > a {
+  display: flex;
+}
+
+nav > a > img {
+  padding: 8px;
+  background-color: #3752b5;
+}
+
+nav > div {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  align-self: center;
+  background-color: white;
+  border-radius: 10rem;
+}
+
+nav > div > button {
+  width: 40px;
+  /* height: 40px; */
+  border-radius: 10rem;
+  border: none;
+  background-color: #01a0e4;
+  cursor: pointer;
 }
 
 footer {
@@ -63,7 +108,7 @@ footer > a > img {
 }
 
 h1 {
-  width: 60%;
+  width: 75%;
   margin: 20px auto;
   margin-top: 0px;
   padding: 2px 0px;
@@ -137,7 +182,29 @@ select {
   height: auto;
 }
 
-button {
+input[type="search"] {
+  margin: 0px;
+  border: none;
+  border-radius: 10rem 0px 0px 10rem;
+}
+
+/* Remove o "x" em navegadores WebKit (Chrome, Safari) */
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Remove o "x" em navegadores Microsoft (Edge) */
+input[type="search"]::-ms-clear {
+  display: none;
+}
+
+/* Remove a borda de foco (opcional, mas recomendado para consistência) */
+input:focus {
+  outline: 0;
+}
+
+button[type="submit"] {
   font-family: "Inter", sans-serif;
   font-weight: 900;
   font-style: italic;
@@ -191,4 +258,98 @@ hr {
 .g_id_signin {
   width: 75%;
   margin: auto;
+}
+
+.produtos {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-bottom: 25px;
+  gap: 10px;
+}
+
+.produtos > div {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  background-color: #de1923;
+  color: white;
+  width: 150px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.25);
+}
+
+.produtos > div > .div1 {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.produtos > div > .div2 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff100;
+  color: black;
+  padding: 5px;
+}
+
+.produtos h4 {
+  font-weight: 900;
+  font-size: 22px;
+  color: #de1923;
+  background-color: #fff100;
+  padding: 5px;
+}
+
+.produtos img {
+  width: 140px;
+  border-radius: 5px;
+  margin: 5px 0px;
+}
+
+.produtos p {
+  margin-bottom: 5px;
+  /* font-size: unset; */
+  width: 100%;
+  /* height: 30px; */
+}
+
+.produtos input {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+  font-size: 15px;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 60px;
+  padding: 10px 5px;
+  background-color: #01a0e4;
+  color: white;
+}
+
+.produtos button {
+  display: flex;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  width: 20px;
+}
+
+.produtos button > img {
+  margin: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
