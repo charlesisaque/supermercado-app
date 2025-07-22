@@ -122,8 +122,9 @@ nav > div > button {
 }
 
 .catalogo > select {
-  width: fit-content;
+  max-width: 95%;
   padding: 5px 10px;
+  padding-right: 30px;
   margin-left: 10px;
   background-color: #01a0e4;
   color: white;

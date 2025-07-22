@@ -12,12 +12,7 @@
         <a href=""><img src="svg/instagram.svg" alt="Nosso Instagram" /></a>
         <a href=""><img src="svg/whatsapp.svg" alt="Nosso Whatsapp" /></a>
       </div>
-      <a href="home.html"
-        ><img
-          src="img/logo.jpg"
-          alt="Supermercado Bahia Norte, preço baixo todo dia!"
-          class="img-logo"
-      /></a>
+      <a href="home.html"><img src="img/logo.jpg" alt="Supermercado Bahia Norte, preço baixo todo dia!" class="img-logo" /></a>
       <div>
         <a href=""><img src="svg/person-circle.svg" alt="Seu Perfil" /></a>
         <a href=""><img src="svg/question-circle.svg" alt="Sobre Nós" /></a>
@@ -52,8 +47,8 @@
           <label for="bebidas">Bebidas</label>
           <input type="radio" name="nav" id="doces" />
           <label for="doces">Doces e Snacks</label>
-          <input type="radio" name="nav" id="limpezas" />
-          <label for="limpezas">Limpezas e Utilidades</label>
+          <input type="radio" name="nav" id="limpeza" />
+          <label for="limpeza">Limpezas e Utilidades</label>
           <input type="radio" name="nav" id="higiene" />
           <label for="higiene">Higiene Pessoal</label>
           <input type="radio" name="nav" id="pets" />
@@ -64,11 +59,90 @@
           <label for="infantil">Infantil</label>
         </div>
         <select name="nav" id="subcategoria">
-          <option value="verduras">Verduras</option>
-          <option value="legumes">Legumes</option>
-          <option value="frutas">Frutas</option>
-          <option value="temperos_frescos">Temperos Frescos</option>
-          <option value="organicos">Orgânicos</option>
+          <!-- 🥬 Hortifrúti -->
+          <option value="verduras" class="hortifruti">Verduras</option>
+          <option value="legumes" class="hortifruti">Legumes</option>
+          <option value="frutas" class="hortifruti">Frutas</option>
+          <option value="temperos-frescos" class="hortifruti">Temperos Frescos</option>
+          <option value="organicos" class="hortifruti">Orgânicos</option>
+
+          <!-- 🥩 Açougue e Frios -->
+          <option value="bovinas" class="frios" style="display: none">Carnes Bovinas</option>
+          <option value="suinas" class="frios" style="display: none">Carnes Suínas</option>
+          <option value="aves" class="frios" style="display: none">Aves</option>
+          <option value="peixes" class="frios" style="display: none">Peixes e Frutos do Mar</option>
+          <option value="embutidos" class="frios" style="display: none">Embutidos (Presunto, Mortadela, Salame)</option>
+          <option value="queijos-frios" class="frios" style="display: none">Queijos e Frios</option>
+
+          <!-- 🥖 Padaria -->
+          <option value="paes-frescos" class="padaria" style="display: none">Pães Frescos</option>
+          <option value="paes-embalados" class="padaria" style="display: none">Pães Embalados</option>
+          <option value="bolos" class="padaria" style="display: none">Bolos</option>
+          <option value="tortas" class="padaria" style="display: none">Tortas</option>
+          <option value="biscoitos-rosquinhas" class="padaria" style="display: none">Biscoitos e Rosquinhas</option>
+          <option value="confeitaria" class="padaria" style="display: none">Confeitaria</option>
+
+          <!-- 🧀 Laticínios -->
+          <option value="leite" class="laticinios" style="display: none">Leite</option>
+          <option value="iogurtes" class="laticinios" style="display: none">Iogurtes</option>
+          <option value="manteiga-margarina" class="laticinios" style="display: none">Manteiga e Margarina</option>
+          <option value="requeijao-creme" class="laticinios" style="display: none">Requeijão e Creme de Leite</option>
+          <option value="queijos" class="laticinios" style="display: none">Queijos</option>
+
+          <!-- 🥫 Mercearia -->
+          <option value="graos" class="mercearia" style="display: none">Arroz, Feijão e Grãos</option>
+          <option value="massas" class="mercearia" style="display: none">Macarrão e Massas</option>
+          <option value="farinha-acucar-sal" class="mercearia" style="display: none">Farinha, Açúcar e Sal</option>
+          <option value="enlatados" class="mercearia" style="display: none">Enlatados</option>
+          <option value="molhos-condimentos" class="mercearia" style="display: none">Molhos e Condimentos</option>
+          <option value="oleos-azeites" class="mercearia" style="display: none">Óleos e Azeites</option>
+          <option value="temperos-secos" class="mercearia" style="display: none">Temperos Secos</option>
+
+          <!-- 🧃 Bebidas -->
+          <option value="refrigerantes" class="bebidas" style="display: none">Refrigerantes</option>
+          <option value="sucos" class="bebidas" style="display: none">Sucos</option>
+          <option value="aguas" class="bebidas" style="display: none">Águas e Águas Saborizadas</option>
+          <option value="energeticos" class="bebidas" style="display: none">Energéticos</option>
+          <option value="cervejas" class="bebidas" style="display: none">Cervejas</option>
+          <option value="vinhos-destilados" class="bebidas" style="display: none">Vinhos e Destilados</option>
+
+          <!-- 🍫 Doces e Snacks -->
+          <option value="chocolates" class="doces" style="display: none">Chocolates</option>
+          <option value="balas-chicletes" class="doces" style="display: none">Balas e Chicletes</option>
+          <option value="biscoitos-bolachas" class="doces" style="display: none">Biscoitos e Bolachas</option>
+          <option value="salgadinhos" class="doces" style="display: none">Salgadinhos</option>
+          <option value="barras-cereal" class="doces" style="display: none">Barras de Cereal</option>
+
+          <!-- 🧼 Limpeza e Utilidades -->
+          <option value="detergentes-sabao" class="limpeza" style="display: none">Detergentes e Sabões</option>
+          <option value="desinfetantes" class="limpeza" style="display: none">Desinfetantes</option>
+          <option value="multiuso" class="limpeza" style="display: none">Limpadores Multiuso</option>
+          <option value="esponjas-panos" class="limpeza" style="display: none">Esponjas e Panos</option>
+          <option value="sacos-lixo" class="limpeza" style="display: none">Sacos de Lixo</option>
+
+          <!-- 🧴 Higiene Pessoal -->
+          <option value="sabonetes" class="higiene" style="display: none">Sabonetes</option>
+          <option value="shampoo-condicionador" class="higiene" style="display: none">Shampoos e Condicionadores</option>
+          <option value="creme-dental" class="higiene" style="display: none">Cremes Dentais</option>
+          <option value="desodorantes" class="higiene" style="display: none">Desodorantes</option>
+          <option value="fraldas-absorventes" class="higiene" style="display: none">Fraldas e Absorventes</option>
+
+          <!-- 🐶 Pets -->
+          <option value="racao" class="pets" style="display: none">Rações para Cães e Gatos</option>
+          <option value="petiscos" class="pets" style="display: none">Petiscos</option>
+          <option value="higiene-pet" class="pets" style="display: none">Higiene Pet</option>
+          <option value="acessorios-pet" class="pets" style="display: none">Acessórios (Coleiras, Brinquedos)</option>
+
+          <!-- 🧻 Casa e Utilidades -->
+          <option value="papel-higienico" class="casa" style="display: none">Papel Higiênico</option>
+          <option value="guardanapos-toalha" class="casa" style="display: none">Guardanapos e Papel Toalha</option>
+          <option value="pilhas-velas-lampadas" class="casa" style="display: none">Pilhas, Velas e Lâmpadas</option>
+          <option value="utensilios-descartaveis" class="casa" style="display: none">Utensílios Básicos (Copos, Pratos, Talheres Descartáveis)</option>
+
+          <!-- 🍼 Infantil -->
+          <option value="alimentos-infantis" class="infantil" style="display: none">Alimentos Infantis</option>
+          <option value="papinhas-formulas" class="infantil" style="display: none">Papinhas e Fórmulas</option>
+          <option value="fraldas-lencos" class="infantil" style="display: none">Fraldas e Lenços Umedecidos</option>
         </select>
       </nav>
       <section class="produtos" id="catalogo">
@@ -79,15 +153,7 @@
             <p>PRODUTO</p>
           </div>
           <div class="div2">
-            <input
-              type="number"
-              name="unidade"
-              id="UN1"
-              value="0"
-              inputmode="numeric"
-              min="0"
-              max="99"
-            /><span>UN</span>
+            <input type="number" name="unidade" id="UN1" value="0" inputmode="numeric" min="0" max="99" /><span>UN</span>
             <button id="diminuir">
               <img src="svg/dash-circle-fill.svg" alt="Menos" />
             </button>
@@ -103,13 +169,7 @@
             <p>PRODUTO</p>
           </div>
           <div class="div2">
-            <input
-              type="number"
-              name="unidade"
-              id="UN2"
-              value="0"
-              inputmode="numeric"
-            /><span>UN</span>
+            <input type="number" name="unidade" id="UN2" value="0" inputmode="numeric" /><span>UN</span>
             <button id="diminuir">
               <img src="svg/dash-circle-fill.svg" alt="Menos" />
             </button>
@@ -125,13 +185,7 @@
             <p>PRODUTO</p>
           </div>
           <div class="div2">
-            <input
-              type="number"
-              name="unidade"
-              id="UN3"
-              value="0"
-              inputmode="numeric"
-            /><span>UN</span>
+            <input type="number" name="unidade" id="UN3" value="0" inputmode="numeric" /><span>UN</span>
             <button id="diminuir">
               <img src="svg/dash-circle-fill.svg" alt="Menos" />
             </button>
@@ -147,13 +201,7 @@
             <p>PRODUTO</p>
           </div>
           <div class="div2">
-            <input
-              type="number"
-              name="unidade"
-              id="UN4"
-              value="0"
-              inputmode="numeric"
-            /><span>UN</span>
+            <input type="number" name="unidade" id="UN4" value="0" inputmode="numeric" /><span>UN</span>
             <button id="diminuir">
               <img src="svg/dash-circle-fill.svg" alt="Menos" />
             </button>
@@ -165,13 +213,9 @@
       </section>
     </main>
     <footer>
-      <a href="home.html"
-        ><img src="svg/arrow-left-square.svg" alt="Retornar"
-      /></a>
+      <a href="home.html"><img src="svg/arrow-left-square.svg" alt="Retornar" /></a>
       <h3>Catálogo</h3>
-      <a href="carrinho.html"
-        ><img src="svg/cart-fill-frame.svg" alt="Carrinho"
-      /></a>
+      <a href="carrinho.html"><img src="svg/cart-fill-frame.svg" alt="Carrinho" /></a>
     </footer>
 
     <!-- Firebase -->
