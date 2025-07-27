@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carrinho - Supermercado Bahia Norte</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header-pagamento">
+      <div><img src="svg/car-front-fill.svg" alt="" /><img src="svg/location.svg" alt="" /></div>
+      <h1>CARRINHO</h1>
+    </header>
+    <main>
+      <div class="div-aviso">
+        <img src="svg/info-circle.svg" alt="Aviso:" />
+        <p class="p-font-inter">Produtos que precisam ser pesados podem ter variação no preço final do seu pedido.</p>
+      </div>
+      <section class="section-carrinho" id="carrinho">
+        <div>
+          <div class="div1"><p class="produto-nome">PRODUTO</p></div>
+          <div class="div2">
+            <img src="img/laranja.jpg" alt="" />
+            <div>
+              <div>
+                <button id="diminuir">
+                  <img src="svg/dash-lg.svg" alt="Menos" />
+                </button>
+                <input type="number" name="unidade" id="UN1" value="0" inputmode="numeric" min="0" max="99" />
+                <button id="aumentar">
+                  <img src="svg/plus-lg.svg" alt="Mais" />
+                </button>
+              </div>
+              <div><span>-1</span><span>UN</span><span>+1</span></div>
+            </div>
+            <span
+              ><button type="reset"><img src="svg/trash3.svg" alt="Deletar" /></button> <span class="p-underline-red">Subtotal:</span></span
+            >
+          </div>
+          <div class="div3">
+            <p class="produto-preço">R$10,00</p>
+            <p class="subtotal">R$10,00</p>
+          </div>
+        </div>
+        <div>
+          <div class="div1"><p class="produto-nome">PRODUTO</p></div>
+          <div class="div2">
+            <img src="img/laranja.jpg" alt="" />
+            <div>
+              <div>
+                <button id="diminuir">
+                  <img src="svg/dash-lg.svg" alt="Menos" />
+                </button>
+                <input type="number" name="unidade" id="UN1" value="0" inputmode="numeric" min="0" max="99" />
+                <button id="aumentar">
+                  <img src="svg/plus-lg.svg" alt="Mais" />
+                </button>
+              </div>
+              <div><span>-1</span><span>UN</span><span>+1</span></div>
+            </div>
+            <span
+              ><button type="reset"><img src="svg/trash3.svg" alt="Deletar" /></button> <span class="p-underline-red">Subtotal:</span></span
+            >
+          </div>
+          <div class="div3">
+            <p class="produto-preço">R$10,00</p>
+            <p class="subtotal">R$10,00</p>
+          </div>
+        </div>
+      </section>
+      <div id="aviso-falta" class="div-aviso-red">
+        <img src="svg/exclamation-circle-fill.svg" alt="Aviso:" />
+        <p class="p-font-inter">Faltam <span id="total-falta">R$208,53</span> em compras para o valor mínimo de entrega em <span id="total-local-entrega">São Cristóvão R$230,00</span></p>
+      </div>
+      <div id="total-carrinho" class="div-aviso-red">
+        <p class="p-font-inter">TOTAL:</p>
+        <p id="total-carrinho-numero" class="p-font-inter">R$21,47</p>
+      </div>
+    </main>
+    <footer>
+      <a href="home.html"><img src="svg/arrow-left-square.svg" alt="Retornar" /></a>
+      <h3>Carrinho</h3>
+      <a href="pagamento.html"><img src="svg/clipboard-check.svg" alt="Pagamento" /></a>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+    <script src="src/firebase-config.js"></script>
+    <script src="src/home.js"></script>
+  </body>
+</html>
