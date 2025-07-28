@@ -1,0 +1,522 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@mixin flexJust($direction, $just) {
+  display: flex;
+  flex-flow: $direction nowrap;
+  justify-content: $just;
+}
+
+@mixin fontInter() {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /* padding: 2rem; */
+  background: #f9f9f9;
+}
+
+main {
+  background: #fff;
+  padding: 2rem 0rem;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ddd;
+}
+
+a {
+  display: flex;
+}
+
+header {
+  @include flexJust(row, center);
+  gap: 25px;
+  background-color: #de1923;
+  padding: 15px;
+  div {
+    @include flexJust(column, space-between);
+    a > img {
+      width: 40px;
+    }
+  }
+  .img-logo {
+    width: 250px;
+    border-radius: 10px;
+  }
+}
+
+.header-pagamento {
+  @include flexJust(row, start);
+  background: linear-gradient(0deg, #de1923 0%, #de1923 30%, white 30%, white 70%, #de1923 70%, #de1923 100%);
+  padding: 0px;
+  gap: 0;
+  box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.25);
+  div {
+    display: grid;
+    grid-template: 1fr 1fr;
+    background-color: #fbbc04;
+    margin: 10px;
+    padding: 8px;
+    width: fit-content;
+    img[src="svg/car-front-fill.svg"] {
+      grid-area: 2 / 1 / 3 / 2;
+      width: 40px;
+    }
+    img[src="svg/location.svg"] {
+      grid-area: 1 / 2 / 2 / 3;
+      margin: 0px 0px -15px -5px;
+      width: 35px;
+    }
+  }
+  h1 {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    color: #162e86;
+    width: 100%;
+    margin: auto;
+    align-self: center;
+  }
+}
+
+nav {
+  @include flexJust(row, space-between);
+  background-color: #162e86;
+  gap: 10px;
+  a > img {
+    padding: 8px;
+    background-color: #3752b5;
+  }
+  div {
+    @include flexJust(row, space-between);
+    align-self: center;
+    width: 100%;
+    background-color: white;
+    border-radius: 10rem;
+    button {
+      width: 42px;
+      border-radius: 50%;
+      border: none;
+      background-color: #01a0e4;
+      cursor: pointer;
+    }
+  }
+}
+
+.nav-catalogo {
+  flex-flow: column;
+  background-color: white;
+  margin-bottom: 15px;
+  div {
+    padding: 10px;
+    gap: 10px;
+    background-color: #162e86;
+    border-radius: 0;
+    box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.25);
+    overflow-x: auto;
+    white-space: nowrap;
+    label {
+      margin: auto;
+      width: fit-content;
+      background-color: #01a0e4;
+      color: white;
+      font-size: 20px;
+      border-radius: 100rem;
+      padding: 5px 10px;
+      border: 3px, solid, #162e86;
+    }
+    input[type="radio"] {
+      display: none;
+      &:checked + label {
+        border: 3px, solid, #87dbff;
+      }
+    }
+  }
+  select {
+    max-width: fit-content;
+    padding: 5px 10px;
+    padding-right: 30px;
+    margin-inline: 10px;
+    background-color: #01a0e4;
+    color: white;
+    @include fontInter();
+    border: none;
+    outline: none;
+    font-size: 20px;
+    border-radius: 100rem;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.25);
+    appearance: none;
+    background-image: url("svg/chevron-down.svg"); /* Adiciona uma imagem de seta */
+    background-position: right 10px top 50%;
+    background-repeat: no-repeat;
+    option {
+      background-color: white;
+      color: black;
+      font-family: "Inter", sans-serif;
+      font-weight: 900;
+      font-style: italic;
+    }
+  }
+}
+
+footer {
+  background-color: #de1923;
+  color: white;
+  @include flexJust(row, space-between);
+  a > img {
+    padding: 5px;
+    width: 65px;
+    background-color: #3752b5;
+  }
+  .vazio {
+    width: 65px;
+    background-color: #ad1f26;
+    height: 34px;
+    align-self: center;
+  }
+}
+
+h1 {
+  width: 65%;
+  margin: 20px auto;
+  margin-top: 0px;
+  padding: 2px 0px;
+  @include fontInter();
+  font-size: 24px;
+  text-align: center;
+  color: #de1923;
+  background-color: #fff100;
+}
+
+h2 {
+  width: 90%;
+  margin: 20px auto;
+  @include fontInter();
+  font-size: 24px;
+  text-align: center;
+}
+
+h3 {
+  @include fontInter();
+  font-size: 20px;
+  margin: auto;
+  background-color: #ad1f26;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 20px 10px;
+  border: #8b0002, 2px, solid;
+  border-radius: 10px;
+  height: 25px;
+  font-size: larger;
+}
+
+form {
+  @include flexJust(column, none);
+  margin-bottom: 1rem;
+  div {
+    margin-bottom: 25px;
+  }
+  label {
+    @include fontInter();
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  select {
+    @extend input;
+    padding: 10px;
+    height: auto;
+  }
+  button[type="submit"] {
+    @include fontInter();
+    font-size: 32px;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    background: #a10000;
+    border: #8b0002 2px solid;
+    color: #fff;
+    border-radius: 10px;
+  }
+}
+
+input[type="search"] {
+  margin: 0px;
+  border: none;
+  border-radius: 10rem 0px 0px 10rem;
+  /* Remove o "x" em navegadores WebKit (Chrome, Safari) */
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  /* Remove o "x" em navegadores Microsoft (Edge) */
+  &::-ms-clear {
+    display: none;
+  }
+  /* Remove a borda de foco (opcional, mas recomendado para consistência) */
+  &:focus {
+    outline: 0;
+  }
+}
+
+.p-login {
+  @include flexJust(row, none);
+  align-items: baseline;
+  font-weight: 700;
+  margin: 0px;
+  gap: 5px;
+  a {
+    color: #00aeff;
+    font-style: italic;
+    font-weight: 900;
+    text-decoration: none;
+  }
+}
+
+.div-login {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+  p {
+    margin: 0px 25px;
+    color: #747775;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 16px;
+  }
+  hr {
+    width: 100%;
+  }
+}
+
+hr {
+  margin: 1.5rem 0;
+  border: none 1px #747775;
+  border-top-style: solid;
+}
+
+.g_id_signin {
+  width: 75%;
+  margin: auto;
+}
+
+.section-produtos {
+  @include flexJust(row, center);
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  gap: 10px;
+  div {
+    @include fontInter();
+    @include flexJust(column, none);
+    text-align: center;
+    background-color: #de1923;
+    color: white;
+    width: 150px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.25);
+    .div1 {
+      @include flexJust(column, none);
+      align-items: center;
+    }
+    .div2 {
+      @include flexJust(row, space-between);
+      align-items: center;
+      background-color: #fff100;
+      color: black;
+      padding: 5px;
+    }
+  }
+  h4 {
+    font-weight: 900;
+    font-size: 22px;
+    color: #de1923;
+    background-color: #fff100;
+    padding: 5px;
+  }
+  img {
+    width: 140px;
+    border-radius: 5px;
+    margin: 5px 0px;
+  }
+  p {
+    margin-bottom: 5px;
+    /* font-size: unset; */
+    width: 100%;
+    /* height: 30px; */
+  }
+  button {
+    display: flex;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    width: 20px;
+    img {
+      margin: 0;
+    }
+  }
+}
+
+.section-produtos input,
+.section-carrinho input {
+  @include fontInter();
+  text-align: center;
+  font-size: 15px;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 60px;
+  padding: 10px 5px;
+  background-color: #01a0e4;
+  color: white;
+}
+
+.section-carrinho {
+  @include flexJust(column, none);
+  @include fontInter();
+  input {
+    background-color: #d9d9d9;
+    color: black;
+    align-self: center;
+  }
+  > div {
+    @include flexJust(column, none);
+    box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+    .div1 {
+      background-color: #162e86;
+      color: white;
+      text-align: center;
+      padding: 2px;
+    }
+    .div2 {
+      @include flexJust(row, space-between);
+      align-items: center;
+      > div {
+        @include flexJust(column, none);
+        border: black solid 2px;
+        border-radius: 25px;
+        padding: 5px 10px;
+        > div {
+          @include flexJust(row, space-around);
+          padding-top: 5px;
+          gap: 10px;
+        }
+      }
+      > span {
+        @include flexJust(column, none);
+        align-items: center;
+        align-self: end;
+        gap: 10px;
+        width: 100px;
+        button {
+          width: 50px;
+        }
+      }
+    }
+    .div3 {
+      @include flexJust(row, space-between);
+      p {
+        padding: 10px 15px;
+      }
+      .produto-preço {
+        color: white;
+        background-color: #de1923;
+      }
+      .subtotal {
+        color: #de1923;
+        background-color: #fff100;
+      }
+    }
+  }
+  button {
+    display: flex;
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    background-color: white;
+  }
+  img {
+    width: 100px;
+    /* border-radius: 5px; */
+    /* margin: 5px 0px; */
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+}
+
+.div-aviso {
+  font-size: 12px;
+  text-align: center;
+  display: flex;
+  gap: 10px;
+  margin: 0px 20px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.div-aviso-red {
+  @extend .div-aviso;
+  align-items: center;
+  color: white;
+  background-color: #de1923;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  img {
+    width: 32px;
+  }
+  &#total-carrinho {
+    font-size: 15px;
+    width: 60%;
+    padding: 5px;
+    padding-left: 15px;
+    margin: auto;
+    align-items: center;
+  }
+}
+
+#total-carrinho-numero {
+  font-size: 12px;
+  background-color: white;
+  color: black;
+  padding: 2px 10px;
+  border-radius: 99rem;
+  width: 100%;
+}
+
+.p-font-inter {
+  @include fontInter();
+}
+
+.p-underline-red {
+  text-decoration: underline;
+  color: #de1923;
+}
+
+/* .main-pagamento {
+  background-color: #f0f0f0;
+} */

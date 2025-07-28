@@ -9,12 +9,7 @@
   </head>
   <body>
     <header>
-      <a href="home.html"
-        ><img
-          src="img/logo.jpg"
-          alt="Supermercado Bahia Norte, preço baixo todo dia!"
-          class="img-logo"
-      /></a>
+      <a href="home.html"><img src="img/logo.jpg" alt="Supermercado Bahia Norte, preço baixo todo dia!" class="img-logo" /></a>
     </header>
     <main>
       <h1>LOGIN</h1>
@@ -22,46 +17,24 @@
       <form id="formLogin">
         <div>
           <label for="emailLogin">E-mail</label>
-          <input
-            id="emailLogin"
-            type="email"
-            placeholder="Seu e-mail"
-            required
-          />
+          <input id="emailLogin" type="email" placeholder="Seu e-mail" required />
           <label for="senhaLogin">Senha</label>
           <input id="senhaLogin" type="password" placeholder="Senha" required />
         </div>
         <button type="submit">Entrar</button>
       </form>
-      <p class="pLogin">
-        Não tem conta? <a href="cadastro.html">Cadastre-se</a>
-      </p>
-      <div class="ouLogin">
+      <p class="p-login"><span>Não tem conta?</span> <a href="cadastro.html">Cadastre-se</a></p>
+      <div class="div-Login">
         <hr />
         <p>ou</p>
         <hr />
       </div>
       <script src="https://accounts.google.com/gsi/client" async></script>
-      <div
-        id="g_id_onload"
-        data-client_id="YOUR_GOOGLE_CLIENT_ID"
-        data-login_uri="https://your.domain/your_login_endpoint"
-        data-auto_prompt="false"
-      ></div>
-      <div
-        class="g_id_signin"
-        data-type="standard"
-        data-size="large"
-        data-theme="outline"
-        data-text="sign_in_with"
-        data-shape="rectangular"
-        data-logo_alignment="left"
-      ></div>
+      <div id="g_id_onload" data-client_id="YOUR_GOOGLE_CLIENT_ID" data-login_uri="https://your.domain/your_login_endpoint" data-auto_prompt="false"></div>
+      <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
     </main>
     <footer>
-      <a href="home.html"
-        ><img src="svg/arrow-left-square.svg" alt="Retornar"
-      /></a>
+      <a href="home.html"><img src="svg/arrow-left-square.svg" alt="Retornar" /></a>
       <h3>Login</h3>
       <div class="vazio"></div>
     </footer>

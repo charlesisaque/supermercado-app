@@ -1,5 +1,5 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +23,10 @@ main {
   box-shadow: 0 0 10px #ddd;
 }
 
+a {
+  display: flex;
+}
+
 header {
   display: flex;
   flex-flow: row nowrap;
@@ -31,96 +35,89 @@ header {
   background-color: #de1923;
   padding: 15px;
 }
-
-header > div {
+header div {
   display: flex;
-  flex-flow: column;
+  flex-flow: column nowrap;
   justify-content: space-between;
 }
-
-header > div > a > img {
+header div a > img {
   width: 40px;
 }
-
-header a,
-footer > a {
-  display: flex;
-}
-
-.img-logo {
+header .img-logo {
   width: 250px;
   border-radius: 10px;
 }
 
 .header-pagamento {
   display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
   background: linear-gradient(0deg, #de1923 0%, #de1923 30%, white 30%, white 70%, #de1923 70%, #de1923 100%);
   padding: 0px;
   gap: 0;
-  justify-content: start;
   box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.25);
 }
-
-.header-pagamento > div {
+.header-pagamento div {
   display: grid;
   grid-template: 1fr 1fr;
   background-color: #fbbc04;
   margin: 10px;
   padding: 8px;
+  width: -moz-fit-content;
   width: fit-content;
 }
-
-.header-pagamento > div > img[src="svg/car-front-fill.svg"] {
-  grid-area: 2 / 1 / 3 / 2;
+.header-pagamento div img[src="svg/car-front-fill.svg"] {
+  grid-area: 2/1/3/2;
   width: 40px;
 }
-.header-pagamento > div > img[src="svg/location.svg"] {
-  grid-area: 1 / 2 / 2 / 3;
+.header-pagamento div img[src="svg/location.svg"] {
+  grid-area: 1/2/2/3;
   margin: 0px 0px -15px -5px;
   width: 35px;
+}
+.header-pagamento h1 {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  color: #162e86;
+  width: 100%;
+  margin: auto;
+  align-self: center;
 }
 
 nav {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-between;
   background-color: #162e86;
   gap: 10px;
 }
-
-nav > a {
-  display: flex;
-}
-
-nav > a > img {
+nav a > img {
   padding: 8px;
   background-color: #3752b5;
 }
-
-nav > div {
+nav div {
   display: flex;
   flex-flow: row nowrap;
-  width: 100%;
+  justify-content: space-between;
   align-self: center;
+  width: 100%;
   background-color: white;
   border-radius: 10rem;
 }
-
-nav > div > button {
-  width: 40px;
-  /* height: 40px; */
-  border-radius: 10rem;
+nav div button {
+  width: 42px;
+  border-radius: 50%;
   border: none;
   background-color: #01a0e4;
   cursor: pointer;
 }
 
-.catalogo {
+.nav-catalogo {
   flex-flow: column;
   background-color: white;
   margin-bottom: 15px;
 }
-
-.catalogo > div {
+.nav-catalogo div {
   padding: 10px;
   gap: 10px;
   background-color: #162e86;
@@ -129,9 +126,9 @@ nav > div > button {
   overflow-x: auto;
   white-space: nowrap;
 }
-
-.catalogo > div > label {
+.nav-catalogo div label {
   margin: auto;
+  width: -moz-fit-content;
   width: fit-content;
   background-color: #01a0e4;
   color: white;
@@ -140,37 +137,36 @@ nav > div > button {
   padding: 5px 10px;
   border: 3px, solid, #162e86;
 }
-
-.catalogo > div > input[type="radio"] {
+.nav-catalogo div input[type=radio], .nav-catalogo div form select[type=radio], form .nav-catalogo div select[type=radio] {
   display: none;
 }
-
-.catalogo > div > input[type="radio"]:checked + label {
+.nav-catalogo div input[type=radio]:checked + label, .nav-catalogo div form select[type=radio]:checked + label, form .nav-catalogo div select[type=radio]:checked + label {
   border: 3px, solid, #87dbff;
 }
-
-.catalogo > select {
-  max-width: 95%;
+.nav-catalogo select {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   padding: 5px 10px;
   padding-right: 30px;
-  margin-left: 10px;
+  margin-inline: 10px;
   background-color: #01a0e4;
   color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-style: italic;
   border: none;
   outline: none;
   font-size: 20px;
   border-radius: 100rem;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.25);
-  font-family: "Inter", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-image: url("svg/chevron-down.svg"); /* Adiciona uma imagem de seta */
   background-position: right 10px top 50%;
   background-repeat: no-repeat;
 }
-
-.catalogo > select > option {
+.nav-catalogo select option {
   background-color: white;
   color: black;
   font-family: "Inter", sans-serif;
@@ -185,14 +181,12 @@ footer {
   flex-flow: row nowrap;
   justify-content: space-between;
 }
-
-footer > a > img {
+footer a > img {
   padding: 5px;
   width: 65px;
   background-color: #3752b5;
 }
-
-.vazio {
+footer .vazio {
   width: 65px;
   background-color: #ad1f26;
   height: 34px;
@@ -211,15 +205,6 @@ h1 {
   text-align: center;
   color: #de1923;
   background-color: #fff100;
-}
-
-.header-pagamento > h1 {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0);
-  color: #162e86;
-  width: 100%;
-  margin: auto;
-  align-self: center;
 }
 
 h2 {
@@ -244,32 +229,9 @@ h3 {
   padding: 5px;
 }
 
-form {
-  display: flex;
-  flex-flow: column;
-  margin-bottom: 1rem;
-}
-
-form > div {
-  margin-bottom: 25px;
-}
-
-label {
-  font-family: "Inter", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-  font-size: 15px;
-  margin-left: 10px;
-  /* text-align: center;
-  max-width: 15%; */
-}
-
-input,
-select {
+input, form select {
   display: block;
   width: 100%;
-  /* max-width: 100%; */
-  /* align-self: center; */
   margin-bottom: 1rem;
   padding: 20px 10px;
   border: #8b0002, 2px, solid;
@@ -278,34 +240,27 @@ select {
   font-size: larger;
 }
 
-select {
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: none;
+  margin-bottom: 1rem;
+}
+form div {
+  margin-bottom: 25px;
+}
+form label {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 15px;
+  margin-left: 10px;
+}
+form select {
   padding: 10px;
   height: auto;
 }
-
-input[type="search"] {
-  margin: 0px;
-  border: none;
-  border-radius: 10rem 0px 0px 10rem;
-}
-
-/* Remove o "x" em navegadores WebKit (Chrome, Safari) */
-input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-/* Remove o "x" em navegadores Microsoft (Edge) */
-input[type="search"]::-ms-clear {
-  display: none;
-}
-
-/* Remove a borda de foco (opcional, mas recomendado para consistência) */
-input:focus {
-  outline: 0;
-}
-
-button[type="submit"] {
+form button[type=submit] {
   font-family: "Inter", sans-serif;
   font-weight: 900;
   font-style: italic;
@@ -318,26 +273,48 @@ button[type="submit"] {
   border-radius: 10px;
 }
 
-.pLogin {
-  font-weight: 700;
+input[type=search], form select[type=search] {
   margin: 0px;
+  border: none;
+  border-radius: 10rem 0px 0px 10rem;
+  /* Remove o "x" em navegadores WebKit (Chrome, Safari) */
+  /* Remove o "x" em navegadores Microsoft (Edge) */
+  /* Remove a borda de foco (opcional, mas recomendado para consistência) */
+}
+input[type=search]::-webkit-search-cancel-button, form select[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+input[type=search]::-ms-clear, form select[type=search]::-ms-clear {
+  display: none;
+}
+input[type=search]:focus, form select[type=search]:focus {
+  outline: 0;
 }
 
-.pLogin > a {
+.p-login {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: none;
+  align-items: baseline;
+  font-weight: 700;
+  margin: 0px;
+  gap: 5px;
+}
+.p-login a {
   color: #00aeff;
   font-style: italic;
   font-weight: 900;
   text-decoration: none;
 }
 
-.ouLogin {
+.div-login {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   width: 100%;
 }
-
-.ouLogin > p {
+.div-login p {
   margin: 0px 25px;
   color: #747775;
   font-family: "Inter", sans-serif;
@@ -345,8 +322,7 @@ button[type="submit"] {
   font-style: italic;
   font-size: 16px;
 }
-
-.ouLogin > hr {
+.div-login hr {
   width: 100%;
 }
 
@@ -361,34 +337,34 @@ hr {
   margin: auto;
 }
 
-.produtos {
+.section-produtos {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: 25px;
   gap: 10px;
 }
-
-.produtos > div {
+.section-produtos div {
   font-family: "Inter", sans-serif;
   font-weight: 900;
   font-style: italic;
-  text-align: center;
   display: flex;
-  flex-flow: column;
+  flex-flow: column nowrap;
+  justify-content: none;
+  text-align: center;
   background-color: #de1923;
   color: white;
   width: 150px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.25);
 }
-
-.produtos > div > .div1 {
+.section-produtos div .div1 {
   display: flex;
-  flex-flow: column;
+  flex-flow: column nowrap;
+  justify-content: none;
   align-items: center;
 }
-
-.produtos > div > .div2 {
+.section-produtos div .div2 {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -397,30 +373,40 @@ hr {
   color: black;
   padding: 5px;
 }
-
-.produtos h4 {
+.section-produtos h4 {
   font-weight: 900;
   font-size: 22px;
   color: #de1923;
   background-color: #fff100;
   padding: 5px;
 }
-
-.produtos img {
+.section-produtos img {
   width: 140px;
   border-radius: 5px;
   margin: 5px 0px;
 }
-
-.produtos p {
+.section-produtos p {
   margin-bottom: 5px;
   /* font-size: unset; */
   width: 100%;
   /* height: 30px; */
 }
+.section-produtos button {
+  display: flex;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  width: 20px;
+}
+.section-produtos button img {
+  margin: 0;
+}
 
-.produtos input,
-.section-carrinho input {
+.section-produtos input, .section-produtos form select, form .section-produtos select,
+.section-carrinho input,
+.section-carrinho form select,
+form .section-carrinho select {
   font-family: "Inter", sans-serif;
   font-weight: 900;
   font-style: italic;
@@ -435,105 +421,81 @@ hr {
   color: white;
 }
 
-.produtos button {
-  display: flex;
-  border-radius: 50%;
-  border: none;
-  background-color: white;
-  cursor: pointer;
-  width: 20px;
-}
-
-.produtos button > img {
-  margin: 0;
-}
-
 .section-carrinho {
   display: flex;
-  flex-flow: column;
+  flex-flow: column nowrap;
+  justify-content: none;
   font-family: "Inter", sans-serif;
   font-weight: 900;
   font-style: italic;
-  /* justify-content: center; */
-  /* margin-bottom: 25px; */
-  /* gap: 10px; */
 }
-
-.section-carrinho input {
+.section-carrinho input, .section-carrinho form select, form .section-carrinho select {
   background-color: #d9d9d9;
   color: black;
   align-self: center;
 }
-
 .section-carrinho > div {
   display: flex;
-  flex-flow: column;
+  flex-flow: column nowrap;
+  justify-content: none;
   box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.25);
   margin-bottom: 20px;
 }
-
-.section-carrinho > div > .div1 {
+.section-carrinho > div .div1 {
   background-color: #162e86;
   color: white;
   text-align: center;
   padding: 2px;
 }
-
-.section-carrinho > div > .div2 {
+.section-carrinho > div .div2 {
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
-
-.section-carrinho > div > .div2 > div {
+.section-carrinho > div .div2 > div {
   display: flex;
   flex-flow: column nowrap;
+  justify-content: none;
   border: black solid 2px;
   border-radius: 25px;
   padding: 5px 10px;
 }
-
-.section-carrinho > div > .div2 > div > div {
+.section-carrinho > div .div2 > div > div {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   padding-top: 5px;
   gap: 10px;
 }
-
-.section-carrinho > div > .div2 > span {
+.section-carrinho > div .div2 > span {
   display: flex;
-  flex-flow: column;
+  flex-flow: column nowrap;
+  justify-content: none;
   align-items: center;
   align-self: end;
   gap: 10px;
   width: 100px;
 }
-
-.section-carrinho > div > .div2 > span > button {
+.section-carrinho > div .div2 > span button {
   width: 50px;
 }
-
-.section-carrinho > div > .div3 {
+.section-carrinho > div .div3 {
   display: flex;
+  flex-flow: row nowrap;
   justify-content: space-between;
 }
-
-.section-carrinho > div > .div3 > p {
+.section-carrinho > div .div3 p {
   padding: 10px 15px;
 }
-
-.section-carrinho > div > .div3 > .produto-preço {
+.section-carrinho > div .div3 .produto-preço {
   color: white;
   background-color: #de1923;
 }
-
-.section-carrinho > div > .div3 > .subtotal {
+.section-carrinho > div .div3 .subtotal {
   color: #de1923;
   background-color: #fff100;
 }
-
 .section-carrinho button {
   display: flex;
   border: none;
@@ -541,22 +503,21 @@ hr {
   width: 25px;
   background-color: white;
 }
-
 .section-carrinho img {
   width: 100px;
   /* border-radius: 5px; */
   /* margin: 5px 0px; */
 }
-
-input[type="number"]::-webkit-inner-spin-button {
+.section-carrinho input[type=number], .section-carrinho form select[type=number], form .section-carrinho select[type=number] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+          appearance: textfield;
+}
+.section-carrinho input[type=number]::-webkit-inner-spin-button, .section-carrinho form select[type=number]::-webkit-inner-spin-button, form .section-carrinho select[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
-input[type="number"] {
-  -moz-appearance: textfield;
-  appearance: textfield;
-}
 
-.div-aviso {
+.div-aviso, .div-aviso-red {
   font-size: 12px;
   text-align: center;
   display: flex;
@@ -570,24 +531,16 @@ input[type="number"] {
 }
 
 .div-aviso-red {
+  align-items: center;
   color: white;
   background-color: #de1923;
-  font-size: 12px;
-  text-align: center;
-  display: flex;
-  gap: 10px;
-  margin: 0px 20px;
   margin-bottom: 10px;
   padding: 10px 15px;
-  border-radius: 25px;
-  box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.25);
 }
-
-.div-aviso-red > img {
+.div-aviso-red img {
   width: 32px;
 }
-
-#total-carrinho {
+.div-aviso-red#total-carrinho {
   font-size: 15px;
   width: 60%;
   padding: 5px;
@@ -618,4 +571,4 @@ input[type="number"] {
 
 /* .main-pagamento {
   background-color: #f0f0f0;
-} */
+} *//*# sourceMappingURL=style.css.map */
