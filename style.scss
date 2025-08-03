@@ -12,6 +12,16 @@
   font-style: italic;
 }
 
+$vermelho: #de1923;
+$vermelho-dark: #ad1f26;
+$vermelho-darker: #a10000;
+$vermelho-darkest: #8b0002;
+$azul: #3752b5;
+$azul-dark: #162e86;
+$azul-light: #01a0e4;
+$amarelo: #fbbc04;
+$amarelo-light: #fff100;
+
 * {
   margin: 0;
   padding: 0;
@@ -27,12 +37,24 @@ body {
 main {
   background: #fff;
   padding: 2rem 0rem;
-  max-width: 400px;
+  max-width: 600px;
+  min-width: 360px;
   margin: auto;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #ddd;
+  // margin-top: 25px;
+  // margin-bottom: 25px;
+  // border-radius: 8px;
+  // box-shadow: 0 0 10px #ddd;
+  img[src="svg/person-circle.svg"] {
+    filter: invert(100%);
+    width: 100px;
+    margin: auto;
+  }
+  &.main-padding {
+    padding: 3rem 2rem;
+    h1 {
+      width: 75%;
+    }
+  }
 }
 
 a {
@@ -42,33 +64,40 @@ a {
 header {
   @include flexJust(row, center);
   gap: 25px;
-  background-color: #de1923;
-  padding: 15px;
+  background-color: $vermelho;
+  padding: min(1rem, 5%);
   div {
     @include flexJust(column, space-between);
-    a > img {
-      width: 40px;
+    a {
+      img {
+        width: 100%;
+      }
+      width: 100%;
     }
   }
   .img-logo {
-    width: 250px;
-    border-radius: 10px;
+    width: 100%;
+    border-radius: 5%/10%;
+  }
+  a[href="home.html"] {
+    width: min(250px, 90%);
   }
 }
 
 .header-pagamento {
   @include flexJust(row, start);
-  background: linear-gradient(0deg, #de1923 0%, #de1923 30%, white 30%, white 70%, #de1923 70%, #de1923 100%);
+  // background: linear-gradient(0deg, $vermelho 0%, $vermelho 30%, white 30%, white 70%, $vermelho 70%, $vermelho 100%);
   padding: 0px;
   gap: 0;
-  box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.25);
+  // box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.25);
   div {
     display: grid;
     grid-template: 1fr 1fr;
-    background-color: #fbbc04;
+    background-color: $amarelo;
     margin: 10px;
     padding: 8px;
     width: fit-content;
+    z-index: 1;
     img[src="svg/car-front-fill.svg"] {
       grid-area: 2 / 1 / 3 / 2;
       width: 40px;
@@ -81,34 +110,57 @@ header {
   }
   h1 {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0);
-    color: #162e86;
+    background-color: white;
+    color: $azul-dark;
     width: 100%;
     margin: auto;
+    padding: 5px 0px;
     align-self: center;
   }
 }
 
 nav {
   @include flexJust(row, space-between);
-  background-color: #162e86;
+  background-color: $azul-dark;
   gap: 10px;
   a > img {
-    padding: 8px;
-    background-color: #3752b5;
+    padding: 0.5em;
+    background-color: $azul;
   }
   div {
     @include flexJust(row, space-between);
     align-self: center;
+    align-content: stretch;
     width: 100%;
     background-color: white;
     border-radius: 10rem;
     button {
-      width: 42px;
+      width: 40px;
       border-radius: 50%;
       border: none;
-      background-color: #01a0e4;
+      background-color: $azul-light;
       cursor: pointer;
+    }
+  }
+  input[type="search"] {
+    font-size: min(1rem, calc(0.75rem + 0.75vw));
+    width: calc(100% - 40px);
+    margin: 0px;
+    border: none;
+    border-radius: 99rem;
+    padding-right: 0px;
+    /* Remove o "x" em navegadores WebKit (Chrome, Safari) */
+    &::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    /* Remove o "x" em navegadores Microsoft (Edge) */
+    &::-ms-clear {
+      display: none;
+    }
+    /* Remove a borda de foco (opcional, mas recomendado para consistência) */
+    &:focus {
+      outline: 0;
     }
   }
 }
@@ -120,7 +172,7 @@ nav {
   div {
     padding: 10px;
     gap: 10px;
-    background-color: #162e86;
+    background-color: $azul-dark;
     border-radius: 0;
     box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.25);
     overflow-x: auto;
@@ -128,12 +180,12 @@ nav {
     label {
       margin: auto;
       width: fit-content;
-      background-color: #01a0e4;
+      background-color: $azul-light;
       color: white;
-      font-size: 20px;
+      font-size: clamp(12px, calc(12px + (20 - 12) * ((100vw - 360px) / 240)), 20px);
       border-radius: 100rem;
       padding: 5px 10px;
-      border: 3px, solid, #162e86;
+      border: 3px, solid, $azul-dark;
     }
     input[type="radio"] {
       display: none;
@@ -143,16 +195,16 @@ nav {
     }
   }
   select {
-    max-width: fit-content;
+    max-width: 90%;
     padding: 5px 10px;
     padding-right: 30px;
-    margin-inline: 10px;
-    background-color: #01a0e4;
+    margin-inline: auto;
+    background-color: $azul-light;
     color: white;
     @include fontInter();
     border: none;
     outline: none;
-    font-size: 20px;
+    font-size: 1rem;
     border-radius: 100rem;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.25);
     appearance: none;
@@ -170,19 +222,14 @@ nav {
 }
 
 footer {
-  background-color: #de1923;
+  background-color: $vermelho;
   color: white;
   @include flexJust(row, space-between);
   a > img {
     padding: 5px;
     width: 65px;
-    background-color: #3752b5;
-  }
-  .vazio {
-    width: 65px;
-    background-color: #ad1f26;
-    height: 34px;
-    align-self: center;
+    background-color: $azul;
+    z-index: 1;
   }
 }
 
@@ -192,28 +239,30 @@ h1 {
   margin-top: 0px;
   padding: 2px 0px;
   @include fontInter();
-  font-size: 24px;
+  font-size: 1.5rem;
   text-align: center;
-  color: #de1923;
-  background-color: #fff100;
+  color: $vermelho;
+  background-color: $amarelo-light;
 }
 
 h2 {
   width: 90%;
   margin: 20px auto;
   @include fontInter();
-  font-size: 24px;
+  font-size: 1.5rem;
   text-align: center;
 }
 
 h3 {
   @include fontInter();
-  font-size: 20px;
+  font-size: 1.25rem;
   margin: auto;
-  background-color: #ad1f26;
+  background-color: $vermelho-dark;
   width: 100%;
   text-align: center;
   padding: 5px;
+  position: absolute;
+  align-self: center;
 }
 
 input {
@@ -221,7 +270,7 @@ input {
   width: 100%;
   margin-bottom: 1rem;
   padding: 20px 10px;
-  border: #8b0002, 2px, solid;
+  border: $vermelho-darkest, 2px, solid;
   border-radius: 10px;
   height: 25px;
   font-size: larger;
@@ -242,35 +291,20 @@ form {
     @extend input;
     padding: 10px;
     height: auto;
+    appearance: none;
+    background-image: url("svg/chevron-down-black.svg"); /* Adiciona uma imagem de seta */
+    background-position: right 10px top 50%;
+    background-repeat: no-repeat;
   }
   button[type="submit"] {
     @include fontInter();
     font-size: 32px;
     padding: 0.6rem 1rem;
     cursor: pointer;
-    background: #a10000;
-    border: #8b0002 2px solid;
+    background: $vermelho-darker;
+    border: $vermelho-darkest 2px solid;
     color: #fff;
     border-radius: 10px;
-  }
-}
-
-input[type="search"] {
-  margin: 0px;
-  border: none;
-  border-radius: 10rem 0px 0px 10rem;
-  /* Remove o "x" em navegadores WebKit (Chrome, Safari) */
-  &::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-    appearance: none;
-  }
-  /* Remove o "x" em navegadores Microsoft (Edge) */
-  &::-ms-clear {
-    display: none;
-  }
-  /* Remove a borda de foco (opcional, mas recomendado para consistência) */
-  &:focus {
-    outline: 0;
   }
 }
 
@@ -322,11 +356,11 @@ hr {
   flex-wrap: wrap;
   margin-bottom: 25px;
   gap: 10px;
-  div {
+  > div {
     @include fontInter();
     @include flexJust(column, none);
     text-align: center;
-    background-color: #de1923;
+    background-color: $vermelho;
     color: white;
     width: 150px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.25);
@@ -337,7 +371,7 @@ hr {
     .div2 {
       @include flexJust(row, space-between);
       align-items: center;
-      background-color: #fff100;
+      background-color: $amarelo-light;
       color: black;
       padding: 5px;
     }
@@ -345,8 +379,8 @@ hr {
   h4 {
     font-weight: 900;
     font-size: 22px;
-    color: #de1923;
-    background-color: #fff100;
+    color: $vermelho;
+    background-color: $amarelo-light;
     padding: 5px;
   }
   img {
@@ -383,7 +417,7 @@ hr {
   border-radius: 0;
   width: 60px;
   padding: 10px 5px;
-  background-color: #01a0e4;
+  background-color: $azul-light;
   color: white;
 }
 
@@ -400,7 +434,7 @@ hr {
     box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.25);
     margin-bottom: 20px;
     .div1 {
-      background-color: #162e86;
+      background-color: $azul-dark;
       color: white;
       text-align: center;
       padding: 2px;
@@ -437,11 +471,11 @@ hr {
       }
       .produto-preço {
         color: white;
-        background-color: #de1923;
+        background-color: $vermelho;
       }
       .subtotal {
-        color: #de1923;
-        background-color: #fff100;
+        color: $vermelho;
+        background-color: $amarelo-light;
       }
     }
   }
@@ -457,12 +491,16 @@ hr {
     /* border-radius: 5px; */
     /* margin: 5px 0px; */
   }
-  input[type="number"] {
-    -moz-appearance: textfield;
-    appearance: textfield;
-    &::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-    }
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  &:focus {
+    outline: 0;
   }
 }
 
@@ -483,7 +521,7 @@ hr {
   @extend .div-aviso;
   align-items: center;
   color: white;
-  background-color: #de1923;
+  background-color: $vermelho;
   margin-bottom: 10px;
   padding: 10px 15px;
   img {
@@ -514,9 +552,34 @@ hr {
 
 .p-underline-red {
   text-decoration: underline;
-  color: #de1923;
+  color: $vermelho;
 }
 
-/* .main-pagamento {
-  background-color: #f0f0f0;
-} */
+.div-perfil {
+  @include fontInter();
+  @include flexJust(column, none);
+  gap: 25px;
+  a {
+    position: relative;
+    @include flexJust(row, start);
+    background-color: $vermelho;
+    border: $vermelho-dark, 2px, solid;
+    border-radius: 10px;
+    // padding: 5px;
+    width: 100%;
+    box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.25);
+    p {
+      position: absolute;
+      width: 100%;
+      padding: 50px;
+      text-align: center;
+      align-self: center;
+      color: white;
+      font-size: 20px;
+    }
+    img {
+      margin: 5px;
+      // filter: invert(100%);
+    }
+  }
+}

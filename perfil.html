@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seu Perfil - Supermercado Bahia Norte</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="home.html"><img src="img/logo.jpg" alt="Supermercado Bahia Norte, preço baixo todo dia!" class="img-logo" /></a>
+    </header>
+    <main class="main-padding">
+      <h1>SEU PERFIL</h1>
+      <a href=""><img src="svg/person-circle.svg" alt="Foto de Perfil" /></a>
+      <h2>Cliente</h2>
+      <div class="div-perfil">
+        <a href="pedidos.html">
+          <img src="svg/archive.svg" alt="" />
+          <p>Seus Pedidos</p>
+        </a>
+        <a href="seguranca.html">
+          <img src="svg/lock.svg" alt="" />
+          <p>Segurança</p>
+        </a>
+        <a href="cep.html">
+          <img src="svg/geo-alt.svg" alt="" />
+          <p>Alterar CEP</p>
+        </a>
+        <a href="cep.html">
+          <img src="svg/credit-card.svg" alt="" />
+          <p>Metodos de Pagamento</p>
+        </a>
+      </div>
+    </main>
+    <footer>
+      <a href="home.html"><img src="svg/arrow-left-square.svg" alt="Retornar" /></a>
+      <h3>Seu Perfil</h3>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+
+    <!-- Configuração Firebase -->
+    <script src="src/firebase-config.js"></script>
+
+    <!-- Seu JS -->
+    <script src="src/login.js"></script>
+  </body>
+</html>
