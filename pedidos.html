@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seus Pedidos - Supermercado Bahia Norte</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="home.html"><img src="img/logo.jpg" alt="Supermercado Bahia Norte, preço baixo todo dia!" class="img-logo" /></a>
+    </header>
+    <main class="main-padding">
+      <h1>SEUS PEDIDOS</h1>
+      <section class="section-pedidos">
+        <div>
+          <div>
+            <p class="data-entrega">27/06/2025</p>
+            <p class="estado-entrega">ENTREGA PENDENTE</p>
+          </div>
+          <ul>
+            <li>Maçã (3 KG) R$ 18,00</li>
+            <li>ARROZ TIO JOÃO 1KG (1) R$ 8,99</li>
+          </ul>
+          <div>
+            <p class="total-entrega">TOTAL: R$26,99</p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <p class="data-entrega">27/06/2025</p>
+            <p class="estado-entrega">ENTREGADO</p>
+          </div>
+          <ul>
+            <li>Maçã (3 KG) R$ 18,00</li>
+            <li>ARROZ TIO JOÃO 1KG (1) R$ 8,99</li>
+          </ul>
+          <div>
+            <p class="total-entrega">TOTAL: R$26,99</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a href="perfil.html"><img src="svg/arrow-left-square.svg" alt="Retornar" /></a>
+      <h3>Seus Pedidos</h3>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+
+    <!-- Configuração Firebase -->
+    <script src="src/firebase-config.js"></script>
+
+    <!-- Seu JS -->
+    <script src="src/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pagamento - Supermercado Bahia Norte</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header-pagamento">
+      <div><img src="svg/car-front-fill.svg" alt="" /><img src="svg/location.svg" alt="" /></div>
+      <h1>PAGAMENTO</h1>
+    </header>
+    <main class="main-padding">
+      <h2>Efetue o pagamento para continuar</h2>
+      <section class="section-pagamento">
+        <img src="svg/qr-code.svg" alt="QR CODE" id="qr-code" />
+        <input type="text" name="" id="" placeholder="(Numero do Pix Copia e Cola)" />
+        <button>Copiar</button>
+      </section>
+      <div id="total-carrinho" class="div-aviso-red">
+        <p class="p-font-inter">TOTAL:</p>
+        <p id="total-carrinho-numero" class="p-font-inter">R$21,47</p>
+      </div>
+    </main>
+    <footer>
+      <a href="home.html"><img src="svg/arrow-left-square.svg" alt="Retornar" /></a>
+      <h3>Pagamento</h3>
+      <!-- <a href="pagamento.html"><img src="svg/clipboard-check.svg" alt="Pagamento" /></a> -->
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+    <script src="src/firebase-config.js"></script>
+    <script src="src/home.js"></script>
+  </body>
+</html>
